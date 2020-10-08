@@ -3,12 +3,25 @@ public class Help {
 
 	public static void main(String[] args) throws java.io.IOException { //throwing the IOException is for input
 		
+		char choice,ignore;
+		do {
 		System.out.println("Help on:");
 		System.out.println("  1. if");
 		System.out.println("  2. switch");
+		System.out.println("  3. for");
+		System.out.println("  4. while");
+		System.out.println("  5. do-while\n");
 		System.out.println("Choose one: ");
-		char choice = (char)System.in.read(); //Recieves next Input on keyboard and assigns an int value we are casting into a char with (char)
-	
+		
+		choice = (char)System.in.read(); //Recieves next Input on keyboard and assigns an int value we are casting into a char with (char)
+		do {
+			ignore = (char) System.in.read();
+		} 
+		while(ignore !='\n');
+		}
+		
+		while(choice < '1' || choice > '5');
+		
 		switch(choice) {
 		case '1':	
 			System.out.println("The if:\n");
@@ -24,8 +37,21 @@ public class Help {
 			System.out.println("  // ...");
 			System.out.println("}");
 			break;
-		default:
-			System.out.print("Selection not found");
+		case '3':
+			System.out.println("The for: \n");
+			System.out.println("for(intit; condition; iteration)");
+			System.out.println("  statement;");
+			break;
+		case '4':
+			System.out.println("The while:\n");
+			System.out.println("while(condition) statement;");
+			break;
+		case '5':
+			System.out.println("The do-while loop:\n");
+			System.out.println("do {");
+			System.out.println("  statement");
+			System.out.println(" } while(condition);");
+			break;
 		}
 	
 	}
