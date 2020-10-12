@@ -3,7 +3,7 @@ import java.io.*;
 
 public class FileManager{
 
-	public static void writeToFile(String saveState, String fileName) throws java.io.IOException {
+	public syncronized void writeToFile(String saveState, String fileName) throws java.io.IOException {
 		
 		try(FileWriter myWriter = new FileWriter(fileName);){
 			myWriter.write(saveState);
